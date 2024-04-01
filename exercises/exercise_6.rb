@@ -11,14 +11,14 @@ puts "----------"
 # Your code goes here ...
 
 @store1.employees.create(first_name: "Khurram", last_name: "Virani", hourly_rate: 60)
-@store1.employees.create(first_name: "Jenny", last_name: "Jorge", hourly_rate: 20)
-@store1.employees.create(first_name: "Manny", last_name: "McGee", hourly_rate: 30)
-@store1.employees.create(first_name: "Fred", last_name: "Flinstone", hourly_rate: 10)
+@store1.employees.create(first_name: "Jenny", last_name: "Jorge", hourly_rate: 200)
+@store1.employees.create(first_name: "Manny", last_name: "McGee", hourly_rate: 130)
+@store1.employees.create(first_name: "Fred", last_name: "Flinstone", hourly_rate: 100)
 
 @store2.employees.create(first_name: "Chris", last_name: "Virtanre", hourly_rate: 60)
-@store2.employees.create(first_name: "Jorg", last_name: "Gatch", hourly_rate: 20)
-@store2.employees.create(first_name: "Matt", last_name: "Gee", hourly_rate: 30)
-@store2.employees.create(first_name: "Jen", last_name: "Flinne", hourly_rate: 10)
+@store2.employees.create(first_name: "Jorg", last_name: "Gatch", hourly_rate: 120)
+@store2.employees.create(first_name: "Matt", last_name: "Gee", hourly_rate: 130)
+@store2.employees.create(first_name: "Jen", last_name: "Flinne", hourly_rate: 70)
 
 
 # We haven't used the Employee class (and employees table) at all yet. 
