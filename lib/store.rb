@@ -5,11 +5,20 @@ class Store < ActiveRecord::Base
   validates :annual_revenue, presence: true, numericality: true, inclusion: {in: 0.., message: "cannot be a negative number"}
   validate :must_have_men_or_women_apparel
 
+  before_destroy :check_destroy_allowed
+
   def must_have_men_or_women_apparel 
     unless mens_apparel == true || womens_apparel == true
       errors.add(:mens_apparel, "Store must carry at least one of men's or women's apparel")
     end
   end
+
+  private
+
+  def check_destroy_allowed
+   throw :abort if Employee.exists?(store_id: self.id)
+  end
+
 end
 
 

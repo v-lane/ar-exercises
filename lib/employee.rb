@@ -1,3 +1,5 @@
+require 'securerandom'
+
 class Employee < ActiveRecord::Base
   belongs_to :store
 
@@ -5,6 +7,13 @@ class Employee < ActiveRecord::Base
   validates :last_name, presence: true
   validates :hourly_rate, presence: true, numericality: true, inclusion: {in: 40..200}
   validates :store_id, presence: true
+
+  before_create :generate_password
+
+  private
+  def generate_password
+    self.password = SecureRandom.alphanumeric(8)
+  end
 
 end
 
